@@ -1,5 +1,15 @@
 # Marge-bot [![Test](https://github.com/smarkets/marge-bot/actions/workflows/test.yml/badge.svg)](https://github.com/smarkets/marge-bot/actions/workflows/test.yml)
 
+## PlaySide Fork
+
+This fork is to do two main things:
+
+1. Update the bot in order to make deployment easier (as per the original's PRs)
+2. Add functionality to the bot in order to make git lfs lockable files supported
+    * Ideally: imitate the author when submitting and unlock all touched files after the merge succeeds
+
+## Introduction
+
 Marge-bot is a merge-bot for GitLab that, beside other goodies,
 implements
 [the Not Rocket Science Rule Of Software Engineering:](http://graydon2.dreamwidth.org/1597.html)
