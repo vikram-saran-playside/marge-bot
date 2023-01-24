@@ -2,11 +2,12 @@
 
 ## PlaySide Fork
 
-This fork is to do two main things:
+This fork is to do a few things:
 
-1. Update the bot in order to make deployment easier (as per the original's PRs)
-2. Add functionality to the bot in order to make git lfs lockable files supported
+1. ~Update the bot in order to make deployment easier (as per the original's PRs)~ (done)
+2. (LFS Locking) Add functionality to the bot in order to make git lfs lockable files supported
     * Ideally: imitate the author when submitting and unlock all touched files after the merge succeeds
+3. (Smart_Priority) Of the merges which are pending, if there is one that is up to date, and the pipeline is already running, prioritise that
 
 ## Introduction
 
