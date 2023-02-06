@@ -5,15 +5,27 @@
 This fork is to do a few things:
 
 1. ~Update the bot in order to make deployment easier (as per the original's PRs)~ (done)
-2. git LFS File Locking
+1. git LFS File Locking
     * Add functionality to the bot in order to make git lfs lockable files supported
     * Ideally: imitate the author when submitting and unlock all touched files after the merge succeeds
-3. Smart_Priority
+1. Smart_Priority
     * Of the merges which are pending, if there is one that is up to date, and the pipeline is already running, prioritise that
-4. Clean Up Dead Branches
+1. Clean Up Dead Branches
     * Especially w.r.t batch merges
-5. Root branch detection
+1. Root branch detection
     * If a MR root branch is another MR, only merge in afterwards
+
+### Dev Setup
+
+1. Install WSL2 Ubuntu (`wsl --install`)
+1. Install [Podman](https://podman-desktop.io)
+    * This is _instead of_ Docker Desktop
+    * Open it, follow the setup instructions until it's ready to run
+1. Use VSCode
+    * [~17.4, not 17.5](https://github.com/microsoft/vscode-docker/issues/3823)
+    * Install the docker extension
+    * The workspace settings.json should use podman as your docker command
+    * There are recommended extensions in .vscode/extensions.json
 
 ## Introduction
 
