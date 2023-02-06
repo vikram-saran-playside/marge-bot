@@ -20,12 +20,14 @@ This fork is to do a few things:
 1. Install WSL2 Ubuntu (`wsl --install`)
 1. Install [Podman](https://podman-desktop.io)
     * This is _instead of_ Docker Desktop
-    * Open it, follow the setup instructions until it's ready to run
+    * Open it, follow the setup instructions until it's running
 1. Use VSCode
     * [~17.4, not 17.5](https://github.com/microsoft/vscode-docker/issues/3823)
     * Install the docker extension
     * The workspace settings.json should use podman as your docker command
     * There are recommended extensions in .vscode/extensions.json
+
+Note: Currently only Docker Desktop works - currently migrating to Podman to make it work as well!
 
 ## Introduction
 
