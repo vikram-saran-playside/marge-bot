@@ -14,6 +14,8 @@ This fork is to do a few things:
     * Especially w.r.t batch merges
 5. Root branch detection
     * If a MR root branch is another MR, only merge in afterwards
+6. Release branch cherry picking
+   * Configure a MR label which can be used to automatically cherry pick changes into a specific release branch (e.g. release::1.2.0 -> release/1.2.0)
 
 ## Introduction
 
