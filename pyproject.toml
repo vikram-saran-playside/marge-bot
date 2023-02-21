@@ -15,12 +15,12 @@ maya = "^0.6"
 PyYAML = "^5.4"
 requests = "^2.28"
 
-[tool.poetry.dev-dependencies]
-pytest = "^6.2.2"
-pytest-cov = "^2.11.1"
-pytest-flake8 = "^1.0.7"
-pytest-pylint = "^0.18.0"
-pytest-runner = "^5.3.0"
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2"
+pytest-cov = "*"
+pytest-runner = "*"
+pytest-flake8 = "*"
+pytest-pylint = "*"
 
 [tool.poetry.scripts]
 marge = "marge.__main__:run"
