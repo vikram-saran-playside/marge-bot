@@ -9,6 +9,8 @@ ENV/
 /dist/
 
 requirements.txt
+requirements_development.txt
 
 # Editor
+.idea/
 *.sw[po]

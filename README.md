@@ -6,16 +6,32 @@ This fork is to do a few things:
 
 1. ~Update the bot in order to make deployment easier (as per the original's PRs)~ (done)
 2. git LFS File Locking
-    * Add functionality to the bot in order to make git lfs lockable files supported
-    * Ideally: imitate the author when submitting and (optionally? how?) unlock all touched files after the merge succeeds
+   - Add functionality to the bot in order to make git lfs lockable files supported
+   - Ideally: imitate the author when submitting and (optionally? how?) unlock all touched files after the merge succeeds
 3. Smart_Priority
-    * Of the merges which are pending, if there is one that is up to date, and the pipeline is already running, prioritise that
+   - Of the merges which are pending, if there is one that is up to date, and the pipeline is already running, prioritise that
 4. Clean Up Dead Branches
-    * Especially w.r.t batch merges
+   - Especially w.r.t batch merges
 5. Root branch detection
-    * If a MR root branch is another MR, only merge in afterwards
+   - If a MR root branch is another MR, only merge in afterwards
 6. Release branch cherry picking
-   * Configure a MR label which can be used to automatically cherry pick changes into a specific release branch (e.g. release::1.2.0 -> release/1.2.0)
+   - Configure a MR label which can be used to automatically cherry pick changes into a specific release branch (e.g. release::1.2.0 -> release/1.2.0)
+
+## Local development setup
+
+Running this project on Windows does not appear to be possible at this time. Poetry seems unable to install some modules and most tests fail.
+
+You can develop in a wsl instance or docker container. WSL setup instructions below:
+
+- Create a [WSL instance](https://learn.microsoft.com/en-us/windows/wsl/install) with [python](https://packages.ubuntu.com/kinetic/python3) and [poetry](https://python-poetry.org/docs/#installation) installed. A Ubuntu install with `python3` package will be sufficient
+  - install the python package (in debian like distros it is likely `python3`, in some other distros it may simply be `python` eg arch)
+  - follow the poetry install link (run the install script)
+- Make sure you have the wsl extension installed in vscode
+- open the marge bot project in a vscode session attached to the wsl instance (open a wsl terminal `cd` to the project location and run `code .`)
+- Run `poetry install`
+- Ensure vscode is using the poetry virtualenvironment
+  - From the command bar run 'Python: Select Interpreter', pick the interpreter path that is suffixed with 'Poetry'. It should have a path begining with `~/.cache/pypoetry/virtualenvs/*`
+- You can now run tests and debug python files
 
 ## Introduction
 
