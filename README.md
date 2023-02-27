@@ -23,15 +23,36 @@ Running this project on Windows does not appear to be possible at this time. Poe
 
 You can develop in a wsl instance or docker container. WSL setup instructions below:
 
-- Create a [WSL instance](https://learn.microsoft.com/en-us/windows/wsl/install) with [python](https://packages.ubuntu.com/kinetic/python3) and [poetry](https://python-poetry.org/docs/#installation) installed. A Ubuntu install with `python3` package will be sufficient
-  - install the python package (in debian like distros it is likely `python3`, in some other distros it may simply be `python` eg arch)
-  - follow the poetry install link (run the install script)
 - Make sure you have the wsl extension installed in vscode
-- open the marge bot project in a vscode session attached to the wsl instance (open a wsl terminal `cd` to the project location and run `code .`)
-- Run `poetry install`
+- Create and enter a [WSL instance](https://learn.microsoft.com/en-us/windows/wsl/install)
+  - `wsl --install`
+  - `wsl` or `<name of install>` e.g. `Ubuntu`
+- Install [python](https://packages.ubuntu.com/kinetic/python3)
+  - `sudo apt-get install python3` or `sudo apt-get install python`
+- Update your package list and install `pip`
+  - `sudo apt update && sudo apt upgrade`
+  - `sudo apt install python3-setuptools python3-pip`
+- Install  [poetry](https://python-poetry.org/docs/#installation)
+  - `curl -sSL https://install.python-poetry.org | python3 -`
+  - Ensure that poetry is installed properly by calling `poetry --version`
+  - You may need to add poetry to path: `export PATH=$PATH:~/.local/share/pypoetry/venv/bin/`
+- Clone the repo into your wsl drive and change directory into the clone (instead of mounting your windows drive to your wsl instance)
+  - `git clone https://github.com/vikram-saran-playside/marge-bot.git`
+  - `cd marge-bot`
+- Install the prerequisites
+  - Run `poetry install`
+  - WIP: CURRENTLY FAILING
+- Open the marge bot folder in a vscode session attached to the wsl instance
+  - `code .`
+- Re-install VSCode plugins
+  - Your vscode extensions that are installed locally are not automatically installed in your wsl "container"
+  - Required plugins are listed in `devcontainer.json`
 - Ensure vscode is using the poetry virtualenvironment
-  - From the command bar run 'Python: Select Interpreter', pick the interpreter path that is suffixed with 'Poetry'. It should have a path begining with `~/.cache/pypoetry/virtualenvs/*`
+  - Press F1 to open the commabd bar, run `Python: Select Interpreter` and pick the `poetry` version of python. It should have a path beginning with `~/.cache/pypoetry/virtualenvs/*`
 - You can now run tests and debug python files
+  - Run tests using the Testing panel, the run button should work
+  - Use the `launch.json` settings to launch and debug the application in full
+    - However, you will have to ensure you set up the correct arguments to pass in
 
 ## Introduction
 
