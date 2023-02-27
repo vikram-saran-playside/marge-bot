@@ -10,7 +10,9 @@
             "request": "launch",
             "module": "marge",
             "justMyCode": true,
-            "args": [ "--debug" ]
+            "args": [ "--debug", "--batch", "--max-ci-time-in-minutes 45", "--impersonate-approvers", "'--use-https", "--use-merge-commit-batches" ]
+            // --auth-token-file
+            // --gitlab-url
         }
     ]
 }
